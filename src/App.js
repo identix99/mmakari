@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {PropertyPage} from "./Pages/PropertyPage";
+import {ProductPage} from "./Pages/ProductPage";
+import { Routes, Route} from "react-router-dom";
+
+import Home_page from "./Pages/Home_page";
+import Contact_page from './Pages/Contact_page';
+import Header from './Components/LandingPage-Compo/Header';
+import {WhatappBtn} from './Components/LandingPage-Compo/WhatappBtn';
+import {BacktoTop} from './Components/LandingPage-Compo/WhatappBtn';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <WhatappBtn/>
+      <BacktoTop />
+      <Routes>
+        <Route index path="/" element={<Home_page />} />
+        <Route path="/propertyPage" element={<PropertyPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/contactpage" element={<Contact_page />} />
+      </Routes>
     </div>
   );
 }
-
 export default App;
