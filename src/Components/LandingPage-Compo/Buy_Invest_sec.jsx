@@ -64,7 +64,7 @@ const Buy_Invest_sec = () => {
                             {
                                 Buy_invest_data.map((index) => {
                                     return (
-                                        <div className='dream_home_box'>
+                                        <div className='dream_home_box' key={index} >
                                             <img src={index.slider_image} alt="buy slider img" />
                                             <div className='dream_home_box_text'>
                                                 <h3>{index.item_heading}</h3>

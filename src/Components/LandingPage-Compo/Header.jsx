@@ -10,7 +10,8 @@ const Header = () => {
         document.documentElement.classList.toggle("cm_overflow");
     };
     let activeStyle = {
-        fontWeight : "700"
+        fontWeight : "600" ,
+        color : "#ffc800"
     };
 
       const [scroll, setScroll] = useState(false);
@@ -19,6 +20,17 @@ const Header = () => {
           setScroll(window.scrollY > 50);
         });
       }, []);
+
+   let targetx = document.querySelectorAll(".menu_cls");
+    targetx.forEach((item)=>{
+                item.addEventListener("click", function() {
+                    settoggleClass(false); 
+                    document.documentElement.classList.remove("cm_overflow");   
+        });
+   })
+
+ 
+
 
     return (
         <>
@@ -34,53 +46,53 @@ const Header = () => {
                                 <div className="menu_list">
                                     <ul className="navbar_nav">
                                         <li className="nav-btn">
-                                        <NavLink  to="/" className="scroll_trigger" style={({ isActive }) =>   isActive ? activeStyle : undefined  } >Home</NavLink>
+                                        <NavLink  to="/" className="scroll_trigger menu_cls" style={({ isActive }) =>   isActive ? activeStyle : undefined  } >Home</NavLink>
                                         </li>
                                         <li className="nav-btn buy_drop_li">
-                                            <a href="javascript:void(0);">
+                                            <a href="#0">
                                                 Buy<KeyboardArrowDownIcon />
                                             </a>
                                             <ul className='buy_drop_box'>
                                                 <li>
-                                                <NavLink  to="/" >Downtown Dubai </NavLink> 
+                                                <NavLink  to="#0" className="menu_cls" >Downtown Dubai </NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" >  Palm Jumeirah</NavLink> 
+                                                <NavLink  to="#0"  className="menu_cls" >  Palm Jumeirah</NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" > Business Bay</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" > Business Bay</NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" >  Lagoons</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" >  Lagoons</NavLink> 
                                                 </li>
                                             </ul>
                                         </li>
                                         <li className="nav-btn buy_drop_li">
-                                            <a href="#the-gateway" className="scroll_trigger">
+                                            <a href="#0" className="scroll_trigger">
                                                 Rent<KeyboardArrowDownIcon />
                                             </a>
                                             <ul className='buy_drop_box'>
                                                 <li>
-                                                <NavLink  to="/" >Dubai Creek Habour</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" >Dubai Creek Habour</NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" >Dubai Hills Estate</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" >Dubai Hills Estate</NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" >Al Arub</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" >Al Arub</NavLink> 
                                                 </li>
                                                 <li>
-                                                <NavLink  to="/" >Dubai Marina</NavLink> 
+                                                <NavLink   to="#0"  className="menu_cls" >Dubai Marina</NavLink> 
                                                 </li>
                                             </ul>
                                         </li>
                                         <li className="nav-btn">
-                                        <NavLink  to="/propertyPage"  className="scroll_trigger" > 
+                                        <NavLink  to="/propertyPage"  className="scroll_trigger menu_cls" style={({ isActive }) =>   isActive ? activeStyle : undefined  }    > 
                                                  Sell
                                                  </NavLink> 
                                         </li>
                                         <li className="nav-btn">
-                                        <NavLink  to="/"  className="scroll_trigger" > 
+                                        <NavLink  to="#0"  className="scroll_trigger menu_cls" > 
                                                 List Your Property
                                                 </NavLink> 
                                         </li>

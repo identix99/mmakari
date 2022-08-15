@@ -88,10 +88,10 @@ const loadmore2 =()=>{
               <p> Showing {currnum} of {first.length} Results  </p>
             </div>
             <Row>
-              {first.slice(0, currnum).map((data) => {
+              {first.slice(0, currnum).map((data , index) => {
                 return (
                   <>
-                     <Col md={6}  className="spacing" >
+                     <Col md={6}  className="spacing" key={index} >
                        <Card item={data} />
                      </Col>
                 </>

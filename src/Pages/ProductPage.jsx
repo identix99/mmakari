@@ -1,6 +1,7 @@
-import React, { Component, useState, useMemo } from "react";
+import React, {   useState, useMemo } from "react";
 import Star1 from "../assets/img/star1.png";
 import Star2 from "../assets/img/star2.png";
+import{ PosterSec} from "../Components/PropertyPage-Compo/PosterSec";
 
 import Slider from "react-slick";
 import "../../node_modules/slick-carousel/slick/slick.css";
@@ -201,13 +202,56 @@ const ProductPage = () => {
     autoplay: true,
     pauseOnDotsHover: true,
   };
+  const settings2 = {
+    dots: false,
+    infinite : false ,
+    peed: 500,
+    slidesToScroll: 1,
+    arrows: false,
+    nextArrow: false,
+    prevArrow:false ,
+    autoplay: true ,
+    pauseOnDotsHover: true,
+    slidesToShow :6 ,
+    swipeToSlide : true ,
+    focusOnSelect : true ,
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 5,
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+         
+        }
+      }
+    ]
+  };
+
 
   //lightbox gallary-------------------------------------------------------------------------
 
   return (
     <>
-      <div className="divider"></div>
-      <div className="ProductPage-section1">
+      <div className="main_wrapper productpage_wrapper" >
+      <PosterSec lighttext="Available" boldtext="Property" />
+      <section className="ProductPage-section1">
         <div className="container ">
           <div className="topCard">
             <div className="top-1">
@@ -261,16 +305,14 @@ const ProductPage = () => {
             </Slider>
           </div>
         </div>
-      </div>
-      <div className="Property-Page-section-2">
+      </section>
+      <section className="Property-Page-section-2">
         <Container>
           <div className="target_slider margin_spacing_row">
             <Slider
+             {...settings2}
               asNavFor={nav1}
               ref={(slider2) => setNav2(slider2)}
-              slidesToShow={6}
-              swipeToSlide={true}
-              focusOnSelect={true}
             >
               <div className="slider_img_spacing">
                 <img
@@ -461,7 +503,7 @@ const ProductPage = () => {
             <div className="extra_stuff">
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>Property Video</Accordion.Header>
+                  <Accordion.Header >Property Video</Accordion.Header>
                   <Accordion.Body>
                     <div className="Property_video">
                       <ShakaPlayer
@@ -499,8 +541,8 @@ const ProductPage = () => {
             </div>
           </div>
         </Container>
-      </div>
-      <div className="Property-Page-section-3">
+      </section>
+      <section className="Property-Page-section-3">
         <Container>
           <div className="Property-Page-section-3_head">
             <Heading
@@ -537,8 +579,8 @@ const ProductPage = () => {
             </div>
           </div>
         </Container>
-      </div>
-      <div className="Property-Page-section-4">
+      </section>
+      <section className="Property-Page-section-4">
         <Container>
           <div className="Property-Page-section-4_head">
             <Heading title1="Featured" boldPart="Property" />
@@ -555,6 +597,7 @@ const ProductPage = () => {
             })}
           </Row>
         </Container>
+      </section>
       </div>
     </>
   );

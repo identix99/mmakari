@@ -3,8 +3,8 @@ import React from 'react';
 const Contact_page = () => {
     return (
         <>
-            <div>
-                <h1> this is Contact_page </h1>
+            <div className='main_wrapper contatuspage_wrapper'>
+                
             </div>
         </>
     )

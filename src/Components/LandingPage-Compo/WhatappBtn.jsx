@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import whatsapp_icon from '../../assets/img/Home_page/whatsapp_icon.png';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 export const WhatappBtn = () => {
@@ -39,3 +39,15 @@ export const  BacktoTop = () => {
     </>
   )
 }
+
+
+// export const Loader =()=>{
+  
+//   const [ spinner, setSpinner ] = useState(true);
+//   useEffect(() => {
+//     setTimeout(() => setSpinner(false), 1000)
+//   }, []);
+
+//   return  !spinner && <div className="loader"> </div> ;
+
+// }
