@@ -95,44 +95,6 @@ const IMAGES = [
   },
 ];
 
-const Gallery = () => {
-  const [showLight, setShowLight] = useState(null);
-
-  const showLightBox = (index) => {
-    setShowLight({
-      startIndex: index,
-    });
-  };
-
-  const hideLightBox = () => {
-    setShowLight(null);
-  };
-
-  return (
-    <>
-      {IMAGES.map((image, index) => (
-        <>
-          <Col md={4} sm={6} key={index} className="spacing_gallary_collaps">
-            <div className="collaps_gallary">
-              <img
-                src={image.src}
-                alt={"GallaryForCollections"}
-                onClick={() => showLightBox(index)}
-              />
-            </div>
-          </Col>
-        </>
-      ))}
-      {showLight ? (
-        <LightBox
-          images={IMAGES.map((img) => ({ url: img.src, title: img.caption }))}
-          startIndex={showLight.startIndex}
-          onClose={hideLightBox}
-        />
-      ) : null}
-    </>
-  );
-};
 
 
 
@@ -183,17 +145,27 @@ const ProductPage = () => {
   const  pagedata = useSelector((state) => state.layer1.Filldata);
   const dispatch = useDispatch();
 
- 
-  
- 
-  console.log(pageid);
-  console.log(pagedata.id);
-  
-
 
   useEffect(() => {
-   dispatch(Filterdataproduct(pageid))
-  },[pageid])
+    if (pagedata != null) {
+       console.log("this is null");
+    }
+    dispatch(Filterdataproduct(pageid))
+   },[])
+ 
+   console.log(pagedata);
+ 
+  
+  
+ 
+
+  // const likexx = async() => {
+  //    await   console.log(pagedata.CardTopimg);
+  // };
+
+  // likexx()
+
+
 
  
   const [first, setfirst] = useState(CardData.Cards);
@@ -503,9 +475,9 @@ const ProductPage = () => {
                           <img src={avtar} alt="avtar" />
                         </a>
                         <a href="#0" className="sub_details">
-                          <a href="#0" className="avtar_text">
+                          <p  className="avtar_text">
                             Christian Gibson usually responds within 5 minutes
-                          </a>
+                          </p>
                         </a>
                         <a href="#0" className="like" onClick={like}>
                           {givelike ? (
@@ -609,7 +581,7 @@ const ProductPage = () => {
             {first.slice(0, 3).map((data, index) => {
               return (
                 <>
-                  <Col lg={4} md={6}  className="spacing" key={data.id}>
+                  <Col lg={4} md={6}  className="spacing"  key={ data.id }>
                     <Card item={data} />
                   </Col>
                 </>
@@ -623,6 +595,46 @@ const ProductPage = () => {
   );
 };
 
+
+
+const Gallery = () => {
+  const [showLight, setShowLight] = useState(null);
+
+  const showLightBox = (index) => {
+    setShowLight({
+      startIndex: index,
+    });
+  };
+
+  const hideLightBox = () => {
+    setShowLight(null);
+  };
+
+  return (
+    <>
+      {IMAGES.map((image, index) => (
+        <>
+          <Col md={4} sm={6} key={index} className="spacing_gallary_collaps">
+            <div className="collaps_gallary">
+              <img
+                src={image.src}
+                alt={"GallaryForCollections"}
+                onClick={() => showLightBox(index)}
+              />
+            </div>
+          </Col>
+        </>
+      ))}
+      {showLight ? (
+        <LightBox
+          images={IMAGES.map((img) => ({ url: img.src, title: img.caption }))}
+          startIndex={showLight.startIndex}
+          onClose={hideLightBox}
+        />
+      ) : null}
+    </>
+  );
+};
 
 
 

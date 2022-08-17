@@ -29,7 +29,7 @@ const PropertyPageSection1 = () => {
 
  
   
-   const [currnum, setnum] = useState(3)
+   const [currnum, setnum] = useState(6)
    
   const Filter_main_tabs1 = [
     { idAndFor: "radio1", name: "check1", label: "Dubai" },
