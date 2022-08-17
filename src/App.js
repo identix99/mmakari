@@ -11,6 +11,7 @@ import Footer from './Components/LandingPage-Compo/Footer';
 import {WhatappBtn} from './Components/LandingPage-Compo/WhatappBtn';
 import {BacktoTop} from './Components/LandingPage-Compo/WhatappBtn';
 // import {Loader} from './Components/LandingPage-Compo/WhatappBtn';
+ 
 
 function App() {
 
@@ -21,10 +22,10 @@ function App() {
       <WhatappBtn/>
       <BacktoTop />
       <Routes>
-        <Route index path="/" element={<Home_page />} />
-        <Route path="/propertyPage" element={<PropertyPage />} />
-        <Route path="/product" element={<ProductPage />} />
-        <Route path="/contactpage" element={<Contact_page />} />
+        <Route exact  index path="/" element={<Home_page />} />
+        <Route exact  path="/propertyPage" element={<PropertyPage />} />
+        <Route  exact    path="/product/:pageid" element={<ProductPage  />} />
+        <Route exact  path="/contactpage" element={<Contact_page />} />
         <Route path="*" element={<ErorrPage />} />
       </Routes>
       <Footer />

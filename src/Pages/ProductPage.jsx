@@ -1,4 +1,4 @@
-import React, {   useState, useMemo } from "react";
+import React, { useEffect,  useState, useMemo } from "react";
 import Star1 from "../assets/img/star1.png";
 import Star2 from "../assets/img/star2.png";
 import{ PosterSec} from "../Components/PropertyPage-Compo/PosterSec";
@@ -44,6 +44,7 @@ import gal8 from "../assets/img/productPage/gal8.png";
 import ShakaPlayer from "shaka-player-react";
 import { CardData } from "../Database/CardData";
 import { Card } from "../Components/PropertyPage-Compo/PropertyPageSection1";
+import { useParams } from "react-router-dom";
 
 import {
   GoogleMap,
@@ -55,6 +56,8 @@ import {
 
 import LightBox from "react-awesome-lightbox";
 import "react-awesome-lightbox/build/style.css";
+import { useSelector, useDispatch } from "react-redux";
+import {Filterdataproduct} from "../action/index";
 
 const IMAGES = [
   {
@@ -109,7 +112,7 @@ const Gallery = () => {
     <>
       {IMAGES.map((image, index) => (
         <>
-          <Col md={4} className="spacing_gallary_collaps">
+          <Col md={4} sm={6} key={index} className="spacing_gallary_collaps">
             <div className="collaps_gallary">
               <img
                 src={image.src}
@@ -130,9 +133,6 @@ const Gallery = () => {
     </>
   );
 };
-
-
-
 
 
 
@@ -179,6 +179,23 @@ const SamplePrevArrow = (props) => {
 
 //-----------------------------------------------------------------------------
 const ProductPage = () => {
+  const {pageid} = useParams();
+  const  pagedata = useSelector((state) => state.layer1.Filldata);
+  const dispatch = useDispatch();
+
+ 
+  
+ 
+  console.log(pageid);
+  console.log(pagedata.id);
+  
+
+
+  useEffect(() => {
+   dispatch(Filterdataproduct(pageid))
+  },[pageid])
+
+ 
   const [first, setfirst] = useState(CardData.Cards);
 
   //like
@@ -237,13 +254,16 @@ const ProductPage = () => {
       {
         breakpoint: 575,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
          
         }
       }
     ]
   };
-
+  
+  // const fill = first.filter((item , index)=> pageid === item.id );
+  // console.log(fill);
+ 
 
   //lightbox gallary-------------------------------------------------------------------------
 
@@ -478,7 +498,7 @@ const ProductPage = () => {
                           <p className="title_contact_sub">2358 254 259</p>
                         </a>
                       </li>
-                      <li className="mb-0">
+                      <li className="mb-lg-0">
                         <a href="#0" className="left_logo">
                           <img src={avtar} alt="avtar" />
                         </a>
@@ -556,13 +576,13 @@ const ProductPage = () => {
               <div className="top_left_gallary">
                 <img src={item3} alt="item1" />
               </div>
-              <div class="top_right_gallery">
+              <div className="top_right_gallery">
                 <img src={item2} alt="item2" />
-                <div class="inner_gallery">
-                  <div class="left_inner">
+                <div className="inner_gallery">
+                  <div className="left_inner">
                     <img src={item5} alt="item5" />
                   </div>
-                  <div class="right_inner">
+                  <div className="right_inner">
                     <img src={item6} alt="item6" />
                   </div>
                 </div>
@@ -571,7 +591,7 @@ const ProductPage = () => {
             <div className="Bottom_gallary">
               <div className="bottom_left_block">
                 <img src={item4} alt="item4" />
-                ``
+               
               </div>
               <div className="bottom_right_block">
                 <img src={item1} alt="item1" />
@@ -589,7 +609,7 @@ const ProductPage = () => {
             {first.slice(0, 3).map((data, index) => {
               return (
                 <>
-                  <Col xs={4} className="spacing" key={data.id}>
+                  <Col lg={4} md={6}  className="spacing" key={data.id}>
                     <Card item={data} />
                   </Col>
                 </>
@@ -602,6 +622,16 @@ const ProductPage = () => {
     </>
   );
 };
+
+
+
+
+
+
+
+
+
+
 
 const Mymap = () => {
   const { isLoaded } = useLoadScript({
@@ -619,7 +649,7 @@ const Map = () => {
     return { lat: 21.181434914123617, lng: 72.82473262835249 };
   }, []);
 
-  const [map, setmap] = useState(/**@type google.maps.GoogleMap */ (null));
+ 
   const marker1 = { lat: 21.143388136907262, lng: 72.84305370914159 };
 
   const containerStyle = {
@@ -635,5 +665,11 @@ const Map = () => {
     </>
   );
 };
+
+
+
+
+
+
 
 export { ProductPage };

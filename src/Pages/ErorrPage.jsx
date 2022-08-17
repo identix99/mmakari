@@ -9,9 +9,9 @@ const ErorrPage = () => {
     <>
       <div className="main_wrapper erorrpage_wrapper">
         <PosterSec lighttext="page Not" boldtext=" Found" />
-        <div class=" erorr property-section">
+        <div className="erorr property-section">
           <Container>
-            <div class="error-container">
+            <div className="error-container">
               <span>4</span>
               <span>
                 <span class="screen-reader-text">0</span>

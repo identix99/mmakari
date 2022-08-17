@@ -18,13 +18,18 @@ import location from "../../assets/img/location.png";
 import blackleft from "../../assets/img/blackleft.png";
 import { CardData } from "../../Database/CardData";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
  
 
 
 
 const PropertyPageSection1 = () => {
-  const [first, setfirst] = useState(CardData.Cards)
-   const [currnum, setnum] = useState(6)
+  const first = useSelector((state)=>state.layer1.Cards)
+  // console.log(first);
+
+ 
+  
+   const [currnum, setnum] = useState(3)
    
   const Filter_main_tabs1 = [
     { idAndFor: "radio1", name: "check1", label: "Dubai" },
@@ -88,10 +93,10 @@ const loadmore2 =()=>{
               <p> Showing {currnum} of {first.length} Results  </p>
             </div>
             <Row>
-              {first.slice(0, currnum).map((data , index) => {
+              {first.slice(0, currnum).map(( data , index) => {
                 return (
                   <>
-                     <Col md={6}  className="spacing" key={index} >
+                     <Col md={6} className="spacing" key={index} >
                        <Card item={data} />
                      </Col>
                 </>
@@ -128,7 +133,7 @@ const Card = ({ item }) => {
  
   return (
     <>
-        <div className="Property_Card"  key={item.id} >
+        <div className="Property_Card"    key={item.id} >
         <div className="Slider_card">
               <Slider {...settings}>
                 <div className="cardtop">
@@ -164,7 +169,7 @@ const Card = ({ item }) => {
                 <img src={location} alt="location" />
                 <p className="location_text"> {item.location}</p>
               </div>
-               <Link className="more_btn" to="/" ><img src={blackleft} alt="blackleft" /> </Link>
+               <Link className="more_btn"  to={`/product/${item.id}`} ><img src={blackleft} alt="blackleft" /> </Link>
             </div>
           </div>
         </div>
@@ -173,7 +178,6 @@ const Card = ({ item }) => {
 }
 
 
-// to={`/EditContactpage/${props.data.id}`}
 const Filter_main_tabs = (props) => {
   const [show, setshow] = useState(false);
 

@@ -44,10 +44,24 @@ export const  BacktoTop = () => {
 // export const Loader =()=>{
   
 //   const [ spinner, setSpinner ] = useState(true);
+  
 //   useEffect(() => {
 //     setTimeout(() => setSpinner(false), 1000)
 //   }, []);
 
-//   return  !spinner && <div className="loader"> </div> ;
+//   return  !spinner &&  <Spinner /> ;
 
+// }
+
+
+
+
+// const Spinner = ()=>{
+//   return(
+//     <>
+//     <div className="loader">
+//       abc
+//     </div>
+//     </>
+//   )
 // }
