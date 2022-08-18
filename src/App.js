@@ -3,7 +3,9 @@ import { PropertyPage } from "./Pages/PropertyPage";
 import { ProductPage } from "./Pages/ProductPage";
 import { Routes, Route } from "react-router-dom";
 import Home_page from "./Pages/Home_page";
-import Contact_page from "./Pages/Contact_page";
+import Contact_page from './Pages/Contact_page';
+import Latest_news_page from './Pages/Latest_news_page';
+import Latest_news_blog from './Pages/Latest_news_blog';
 import ErorrPage from "./Pages/ErorrPage";
 import Header from "./Components/LandingPage-Compo/Header";
 import Footer from "./Components/LandingPage-Compo/Footer";
@@ -23,7 +25,11 @@ function App() {
           <Route exact index path="/" element={<Home_page />} />
           <Route exact path="/propertyPage" element={<PropertyPage />} />
           <Route exact path="/product/:pageid" element={<ProductPage />} />
+
           <Route exact path="/contactpage" element={<Contact_page />} />
+          <Route path="/latest_news_page" element={<Latest_news_page />} />
+          <Route path="/latest_news_blog" element={<Latest_news_blog />} />
+
           <Route path="*" element={<ErorrPage />} />
         </Routes>
         <Footer />

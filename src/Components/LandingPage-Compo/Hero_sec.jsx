@@ -16,7 +16,7 @@ const Hero_sec = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-         autoplay: true,
+        autoplay: true,
         speed: 2000,
         autoplaySpeed: 5000,
         prevArrow: <div className='cm_arrow left_arrow'><WestIcon /></div>,

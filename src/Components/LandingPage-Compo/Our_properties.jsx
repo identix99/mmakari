@@ -8,7 +8,9 @@ import our_properties_4 from '../../assets/img/Home_page/our_properties_4.png';
 import our_properties_5 from '../../assets/img/Home_page/our_properties_5.png';
 import our_properties_6 from '../../assets/img/Home_page/our_properties_6.png';
 import {ButtonX} from "../PropertyPage-Compo/PropertyPageSection1";
+import { useNavigate } from 'react-router-dom';
 const Our_properties = () => {
+    const navigate = useNavigate()
     return (
         <>
             <section className='our_properties section_padding' id="triggerSection">
@@ -19,7 +21,7 @@ const Our_properties = () => {
                             <p className='title_discrepancy'>Holiday Home Rental Apartments & Villas in Dubai.</p>
                         </div>
                         <div className='btn-view_more'>
-                            <ButtonX text="View All" titlehov="View All" id="btn004"  />
+                        <span  onClick={()=>  navigate("/propertyPage", { replace: true })}  >    <ButtonX text="View All" titlehov="View All" id="btn004"  /></span>
                         </div>
                     </div>
                     <div className='our_properties_images'>

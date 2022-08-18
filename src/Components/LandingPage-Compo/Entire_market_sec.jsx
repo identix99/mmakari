@@ -3,9 +3,9 @@ import { Container } from 'react-bootstrap';
 import Heading_left_bor from './Heading_left_bor';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Entire_box_arrow from '../../assets/img/Home_page/Entire_box_arrow.png';
 import Entire_market_data from '../../Database/Entire_market_data';
-import {ButtonX} from "../PropertyPage-Compo/PropertyPageSection1";
+import { ButtonX } from "../PropertyPage-Compo/PropertyPageSection1";
+
 const Entire_market_sec = () => {
     return (
         <>
@@ -17,30 +17,42 @@ const Entire_market_sec = () => {
                     </div>
                     <Row>
                         {
-                            Entire_market_data.map((item, index) => {
+                            Entire_market_data.slice(0, 3).map((data, index) => {
                                 return (
-                                    <Col  md={4} sm={6} key={index} className="spacing_blog">
-                                        <div className='Entire_market_box'>
-                                           <div className="img_blog">
-                                           <img src={item.box_image} alt="Entire_market_img" />
-                                           </div>
-                                            <div className='Entire_market_box_text'>
-                                                <li>{item.item_date}</li>
-                                                <span></span>
-                                                <h3>{item.item_description}</h3>
-                                                <a href={item.item_link} target="/">Read More <img src={Entire_box_arrow} alt="Entire_box_arrow" /></a>
-                                            </div>
-                                        </div>
+                                    <Col md={4} sm={6} key={index} className="spacing_blog">
+                                        <Entire_blog_card item={data} />
                                     </Col>
                                 )
                             })
                         }
                     </Row>
                     <div className='btn-bloginhome'>
-                    <ButtonX text="View All" titlehov="View All" id="btn005"  />
+                        <ButtonX text="View All" titlehov="View All" id="btn005" />
                     </div>
                 </Container>
             </section>
+        </>
+    )
+}
+
+export const Entire_blog_card = ({ item }) => {
+    return (
+        <>
+            <div className='Entire_market_box'>
+                <div className="img_blog">
+                    <img src={item.box_image} alt="Entire_market_img" />
+                </div>
+                <div className='Entire_market_box_text'>
+                    <li>{item.item_date}</li>
+                    <span></span>
+                    <h3>{item.item_description}</h3>
+                    <a href="#0" >Read More
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.9855 5.22762L10.7613 1.08979L11.8748 -0.000976562L18 5.99902L11.8748 11.999L10.7613 10.9083L14.9855 6.77043H10.1927H0V5.22762H14.9855Z" fill="#42A8D4" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </>
     )
 }

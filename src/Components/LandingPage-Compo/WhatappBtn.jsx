@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import whatsapp_icon from "../../assets/img/Home_page/whatsapp_icon.png";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import $ from "jquery";
+ 
 
 export const WhatappBtn = () => {
   return (
@@ -48,19 +48,7 @@ export const BacktoTop = () => {
 };
 
 export const Loader = () => {
-    useEffect(() => {
-      $(window).on("load",function() {
-         $("body").addClass('loader_active');
-        
-          setTimeout(() => {
-              $(".loader_block").fadeOut();
-               $("body").removeClass('loader_active');
-          }, 2000);
-
-      });
-
-  },[])
-
+ 
   return (
     <>
       <div className="loader_block">

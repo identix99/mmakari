@@ -1,10 +1,7 @@
 import React,{useState} from 'react';
 import hero_button_icon from '../../assets/img/Home_page/hero_button_icon.png';
-
 const Hero_sec_text = () => {
-
     const [active, setactive] = useState("list2");
-
     return (
         <div className='hero_text_main'>
             <h1>Find Yourself <span>a Better Place</span></h1>
