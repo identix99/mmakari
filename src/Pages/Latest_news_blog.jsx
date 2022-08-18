@@ -11,9 +11,10 @@ import Latest_news_blog_img_1 from '../assets/img/Latest_news_blog/Latest_news_b
 import share_icon from '../assets/img/Latest_news_blog/share_icon.svg';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import { useParams } from 'react-router-dom';
 
 const Latest_news_blog = () => {
+    const {blogid} = useParams();
     //like
     const [givelike, setlike] = useState(0);
     const like = () => {
@@ -52,7 +53,7 @@ const Latest_news_blog = () => {
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                 </div>
                                 <div className='Related_tags'>
-                                    <span>Related tags:</span>
+                                    <span>Related tags :</span>
                                     <ul>
                                         <li><a href="#0">Education</a></li>
                                         <li><a href="#0">Events</a></li>

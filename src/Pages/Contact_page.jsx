@@ -11,7 +11,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { ButtonX } from "../Components/PropertyPage-Compo/PropertyPageSection1";
-
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import { useFormik } from 'formik';
 import { SignUpSchema } from '../schemas/Contact_form_data';
 
@@ -37,7 +37,6 @@ const Contact_page = () => {
         validationSchema: SignUpSchema,
         onSubmit: async (values, action) => {
             const { drop, email, message, name } = values;
-            console.log(drop);
             const res = await fetch("https://mmakari-416d1-default-rtdb.firebaseio.com/data.json", {
                 method: "POST",
                 headers: {
@@ -49,10 +48,26 @@ const Contact_page = () => {
                     message,
                     name,
                 })
-            }).then((response) => response.json())
-                .then((data) => console.log(data))
-                .catch((erorr) => console.log(erorr));
-                action.resetForm();
+            }).then((response) => response)
+                .then((data) => {
+                     console.log(data);
+                    if(data.status === 200){
+                        action.resetForm();
+                        const messege = document.querySelector(".form-messege"); 
+                        messege.classList.add("show"); 
+                        setTimeout(function () {
+                        //   messege.classList.remove("show");
+                        }, 4000); 
+                  }else{
+                            const messege = document.querySelector(".form-messege2"); 
+                            messege.classList.add("show"); 
+                            setTimeout(function () {
+                            messege.classList.remove("show");
+                            }, 4000); 
+                  }
+
+                }).catch((erorr) => console.log(erorr));
+               
         },
     });
 
@@ -65,14 +80,13 @@ const Contact_page = () => {
                     <Container>
                         <div className='contact_row'>
                             <div className='form_col'>
-                                <form onSubmit={handleSubmit} method="post" >
+                                <form onSubmit={handleSubmit}  >
                                     <div className='form_inputs'>
-                                        <label htmlFor="">Name</label>
+                                        <label htmlFor="name">Name</label>
                                         <input
                                             type="text"
                                             id="name"
                                             placeholder='Full name'
-
                                             name='name'
                                             value={values.name}
                                             onChange={handleChange}
@@ -80,12 +94,11 @@ const Contact_page = () => {
                                         {errors.name && touched.name ? <p className='form_errors'>{errors.name}</p> : null}
                                     </div>
                                     <div className='form_inputs'>
-                                        <label htmlFor="">Email Address</label>
+                                        <label htmlFor="Email">Email Address</label>
                                         <input
                                             type="Email"
                                             id="Email"
                                             placeholder='xyz@abc.com'
-
                                             name='email'
                                             value={values.email}
                                             onChange={handleChange}
@@ -93,7 +106,7 @@ const Contact_page = () => {
                                         {errors.email && touched.email ? <p className='form_errors'>{errors.email}</p> : null}
                                     </div>
                                     <div className='form_inputs'>
-                                        <label htmlFor="" >Regarding</label>
+                                        <label htmlFor="007" >Regarding</label>
                                         <div onClick={droptoggle} id="click"> 
                                             <FormControl sx={{ m: 1, minWidth: 120 }}  >
                                                 <Select
@@ -101,6 +114,7 @@ const Contact_page = () => {
                                                     value={values.drop}
                                                     onChange={handleChange}
                                                     displayEmpty
+                                                    id="007"
                                                     inputProps={{ 'aria-label': 'Without label' }}
                                                 >
                                                     <MenuItem value="">
@@ -116,14 +130,13 @@ const Contact_page = () => {
                                         {errors.drop && touched.drop ? <p className='form_errors'>{errors.drop}</p> : null}
                                     </div>
                                     <div className='form_inputs'>
-                                        <label htmlFor="">Message</label>
+                                        <label htmlFor="Message">Message</label>
                                         <textarea
                                             rows="4"
                                             cols="50"
                                             id="Message"
                                             name="message"
                                             form="usrform"
-
                                             placeholder='Write Your Message Here...'
                                             value={values.message}
                                             onChange={handleChange}
@@ -131,6 +144,8 @@ const Contact_page = () => {
                                         {errors.message && touched.message ? <p className='form_errors'>{errors.message}</p> : null}
                                     </div>
                                     <ButtonX text="Submit" titlehov="Submit" id="btn00100" type="submit" />
+                                    <span className="form-messege">Your Form has been submitted successfully <><ThumbUpAltIcon className="iconx" /></> </span>
+                                    <span className="form-messege2">Unable to Submit Form: Please Try Again !!<><ThumbUpAltIcon className="iconx2" /></> </span>
                                 </form>
                             </div>
                             <div className='get_in_touch_col'>
@@ -141,38 +156,38 @@ const Contact_page = () => {
                                 <div className='get_in_touch_icons'>
                                     <div className='get_icons_item'>
                                         <div className='get_icon'>
-                                            <img src={Get_in_Touch_icon_1} alt="Get_in_Touch_icon" />
+                                           <a href="https://goo.gl/maps/fGMss8vUN7bikZ5T8" target="_blank" > <img src={Get_in_Touch_icon_1} alt="Get_in_Touch_icon" /></a>
                                         </div>
                                         <div>
                                             <h6>Reach Us</h6>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+                                            <a href="https://goo.gl/maps/fGMss8vUN7bikZ5T8" target="_blank" >  <p>Lorem Ipsum is simply dummy text of the printing and typesetting.</p></a>
                                         </div>
                                     </div>
                                     <div className='get_icons_item'>
                                         <div className='get_icon'>
-                                            <img src={Get_in_Touch_icon_2} alt="Get_in_Touch_icon" />
+                                        <a href="mailto:priyanksavaliyainvints@gmail.com">    <img src={Get_in_Touch_icon_2} alt="Get_in_Touch_icon" /> </a>
                                         </div>
                                         <div>
                                             <h6>Drop a mail</h6>
-                                            <p>abc@xyz.com</p>
+                                            <a href="mailto:priyanksavaliyainvints@gmail.com">  <p>abc@xyz.com</p> </a>
                                         </div>
                                     </div>
                                     <div className='get_icons_item'>
                                         <div className='get_icon'>
-                                            <img src={Get_in_Touch_icon_3} alt="Get_in_Touch_icon" />
+                                        <a href="tel:2358254259">   <img src={Get_in_Touch_icon_3} alt="Get_in_Touch_icon" /></a>
                                         </div>
                                         <div>
                                             <h6>Call Us</h6>
-                                            <p>235 258 147 1</p>
+                                            <a href="tel:2358254259">   <p>235 258 147 1</p></a>
                                         </div>
                                     </div>
                                     <div className='get_icons_item'>
                                         <div className='get_icon'>
-                                            <img src={Get_in_Touch_icon_4} alt="Get_in_Touch_icon" />
+                                        <a href="tel:2358254259"> <img src={Get_in_Touch_icon_4} alt="Get_in_Touch_icon" /></a>
                                         </div>
                                         <div>
                                             <h6>Leave us a message</h6>
-                                            <p>2358 254 259</p>
+                                           <a href="tel:2358254259"> <p>2358 254 259</p></a>
                                         </div>
                                     </div>
                                 </div>

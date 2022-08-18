@@ -3355,3 +3355,39 @@
  /* Latest_news_blog css End*/ 
  /* font-family: 'Inter', sans-serif; */
  /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% anuj css End %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+ .form-messege , .form-messege2{
+  padding: 5px;
+  background-color: #42A8D4;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #021540;
+  touch-action: none;
+  pointer-events: none;
+  visibility: hidden;
+ }
+ .form_col{
+  position: relative;
+ }
+ .form-messege .iconx path , .form-messege2 .iconx2  path{
+  fill: #021540;
+ }
+ .form-messege .iconx ,  .form-messege2 .iconx2 {
+  margin-left: 5px;
+ }
+ .form-messege.show , .form-messege2.show{
+  display: flex;
+  touch-action: auto;
+  visibility: visible;
+  pointer-events: all;
+ }
+ 

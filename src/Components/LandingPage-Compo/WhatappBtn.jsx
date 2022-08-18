@@ -48,7 +48,6 @@ export const BacktoTop = () => {
 };
 
 export const Loader = () => {
- 
   return (
     <>
       <div className="loader_block">

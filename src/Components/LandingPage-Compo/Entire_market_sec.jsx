@@ -5,8 +5,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Entire_market_data from '../../Database/Entire_market_data';
 import { ButtonX } from "../PropertyPage-Compo/PropertyPageSection1";
+import { useNavigate } from "react-router-dom";
+import {  Link } from 'react-router-dom';
 
 const Entire_market_sec = () => {
+    let navigate = useNavigate();
     return (
         <>
             <section className='Entire_market_sec'>
@@ -27,7 +30,7 @@ const Entire_market_sec = () => {
                         }
                     </Row>
                     <div className='btn-bloginhome'>
-                        <ButtonX text="View All" titlehov="View All" id="btn005" />
+                       <span onClick={()=>  navigate("/contactpage", { replace: true })} > <ButtonX text="View All" titlehov="View All" id="btn005" /></span>
                     </div>
                 </Container>
             </section>
@@ -46,11 +49,11 @@ export const Entire_blog_card = ({ item }) => {
                     <li>{item.item_date}</li>
                     <span></span>
                     <h3>{item.item_description}</h3>
-                    <a href="#0" >Read More
+                    <Link  to={`/latest_news_blog/${item.id}`}>Read More
                         <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.9855 5.22762L10.7613 1.08979L11.8748 -0.000976562L18 5.99902L11.8748 11.999L10.7613 10.9083L14.9855 6.77043H10.1927H0V5.22762H14.9855Z" fill="#42A8D4" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </>
