@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import Heading_left_bor from './Heading_left_bor';
+import {Heading} from "../PropertyPage-Compo/Heading";
 import Slider from "react-slick";
 import Buy_invest_data from "../../Database/Buy_invest_data";
+import Row from "react-bootstrap/Row";
 
 const SampleNextArrow = (props) => {
     const {onClick } = props;
@@ -57,8 +58,8 @@ const Buy_Invest_sec = () => {
         <>
             <section className='buy_Invest_sec section_padding'>
                 <Container>
-                    <Heading_left_bor Heading_text="Buy/Invest in Your " Heading_span="Dream Home In Dubai" />
-                    <p className='title_discrepancy'>Forever Evolving Nation, And a Rising City.</p>
+                    <div className='buy_Invest_sec_head isotop_section_head'><Heading title1="Buy/Invest in Your" boldPart="Dream Home In Dubai" text="Forever Evolving Nation, And a Rising City." /></div>
+                    <Row>
                     <div className='buy_Invest_slider'>
                         <Slider {...settings}>
                             {
@@ -76,6 +77,8 @@ const Buy_Invest_sec = () => {
                             }
                         </Slider>
                     </div>
+                    </Row>
+                  
                 </Container>
             </section>
         </>

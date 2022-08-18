@@ -98,6 +98,20 @@
 
 /* priyank css */
 @media (max-width: 1440px) {
+    .isotop_section_head {
+        margin-bottom: 40px;
+    }
+    .filterbtn {
+        font-size: 18px;
+        padding-bottom: 16px;
+        margin: 0 18px;
+    }
+    .filterbtn_block {
+        margin-bottom: 35px;
+    }
+    .filter_block .spacing {
+        margin-bottom: 20px;
+    }
     .Property-Page-section-4 {
         padding: 70px 0 380px 0;
     }
@@ -734,6 +748,7 @@
 }
 
 @media (max-width: 1199px) {
+
     .Property-Page-section-4_head {
         margin-bottom: 40px;
     }
@@ -745,11 +760,20 @@
         font-size: 16px;
         padding: 0 25px 0 25px;
     }
-
+.filterbtn {
+    font-size: 16px;
+    padding-bottom: 14px;
+    margin: 0 14px;
+}
     .bottom_left_block {
         margin-top: -276px;
     }
-
+    .isotop_section_head {
+        margin-bottom: 35px;
+    }
+    .filterbtn_block {
+        margin-bottom: 30px;
+    }
     .Bottom_gallary,
     .inner_gallery {
         padding-top: 24px;
@@ -762,7 +786,9 @@
     .Property_map {
         height: 550px;
     }
-
+    .isotop_section_btn {
+        padding-top: 20px;
+    }
     .flex_props {
         justify-content: center;
         flex-direction: column;
@@ -2440,10 +2466,27 @@
 }
 
 @media (max-width: 575px) {
+    .dream_home_box {
+        padding: 0 15px;
+    }
+    .isotop_section_head {
+        margin-bottom: 30px;
+    }
+    .filterbtn_block {
+        margin-bottom: 25px;
+    }
+    .filterbtn {
+        font-size: 14px;
+        padding-bottom: 10px;
+        margin: 0 10px;
+    }
     .form-messege, .form-messege2 {
        font-size: 10px;
        padding: 3px;
        bottom: -37px;
+    }
+    .isotop_section_btn {
+        padding-top: 15px;
     }
     .form-messege svg    , .form-messege2 svg {
         width: 18px;

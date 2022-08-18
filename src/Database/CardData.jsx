@@ -51,7 +51,7 @@ export const CardData = {
       price: "25000",
       location: "Sheikh Mohammed bin Rashid Blvd",
       properttheme : "Lifestyle Location" ,
-
+      categories:"Downtown Dubai" ,
       productpage :{
         id_x :"1",
         pagetitle : "Lifestyle Location" ,
@@ -93,7 +93,7 @@ export const CardData = {
       price: "28000",
       location: "Emaar Blvd - Downtown Dubai",
       properttheme : "Residencial Location" ,
-
+      categories:"Emaar Beachfront" ,
       productpage :{
         id_x :"2",
         pagetitle : "Residencial Location" ,
@@ -135,7 +135,7 @@ export const CardData = {
       price: "44000",
       location: "Sheikh Mohammed bin Rashid Blvd",
       properttheme : "Studio Location" ,
-
+      categories:"Meydan" ,
       productpage :{
         id_x :"3",
         pagetitle : "Studio Location" ,
@@ -177,7 +177,7 @@ export const CardData = {
       price: "50000",
       location: "Mohammed Bin  Maktoum District - UAE",
       properttheme : "Port De La Mer" ,
-
+      categories:"Business Bay" ,
       productpage :{
         id_x :"4",
         pagetitle : "Port De La Mer" ,
@@ -220,7 +220,7 @@ export const CardData = {
       price: "60000",
       location: "Palm Jumeirah - Dubai - UAE",
       properttheme : "Mina" ,
-
+      categories:"Port De La Mer" ,
       productpage :{
         id_x :"5",
         pagetitle : "Mina" ,
@@ -263,7 +263,7 @@ export const CardData = {
       price: "80000",
       location: "Golf City - Dubai - United Arab Emirates",
       properttheme : "Venice" ,
-
+      categories:"Hot Properties" ,
       productpage :{
         id_x :"6",
         pagetitle : "Venice" ,
@@ -309,7 +309,7 @@ export const CardData = {
       price: "71585",
       location: "X6XQ+9M3 - Remraam - Dubai - UAE",
       properttheme : "Costa Brava" ,
-
+      categories:"Lagoons" ,
       productpage :{
         id_x :"7",
         pagetitle : "Costa Brava" ,
@@ -351,7 +351,7 @@ export const CardData = {
       price: "121000",
       location: "264F+RWM - Golf City - Dubai - UAE",
       properttheme : "Santorini" ,
-
+      categories:"Hot Properties" ,
       productpage :{
         id_x :"8",
         pagetitle : "Santorini" ,
@@ -393,7 +393,7 @@ export const CardData = {
       price: "12002",
       location: "Emaar Beachfront - Dubai - UAE",
       properttheme : "Malta" ,
-
+      categories:"Lagoons" ,
       productpage :{
         id_x :"9",
         pagetitle : "Malta" ,
@@ -435,7 +435,7 @@ export const CardData = {
       price: "85000",
       location: "266C+MR - Golf City - Dubai - UAE",
       properttheme : "Portofino" ,
-
+      categories:"Downtown Dubai" ,
       productpage :{
         id_x :"10",
         pagetitle : "Portofino" ,
@@ -477,7 +477,7 @@ export const CardData = {
       price: "83000",
       location: "34WQ+VCM Emaar Downtown Dubai",
       properttheme : "Beach Vista" ,
-
+      categories:"Port De La Mer" ,
       productpage :{
         id_x :"11",
         pagetitle : "Beach Vista" ,
@@ -519,7 +519,7 @@ export const CardData = {
       price: "99900",
       location: "31WQ+VCM Emaar - Downtown Dubai",
       properttheme : "Marina Shores" ,
-
+      categories:"Emaar Beachfront" ,
       productpage :{
         id_x :"12",
         pagetitle : "Marina Shores" ,
@@ -561,7 +561,7 @@ export const CardData = {
       price: "75000",
       location: "57QJ+P78 - Downtown Dubai",
       properttheme : "W Residences" ,
-
+      categories:"Business Bay" ,
       productpage :{
         id_x :"13",
         pagetitle : "W Residences" ,
