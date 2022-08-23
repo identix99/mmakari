@@ -4,9 +4,7 @@ import Row from "react-bootstrap/Row";
 import plus from "../../assets/img/Vectorb.png";
 import minus from "../../assets/img/Vectorx.png";
 import leftaroww from "../../assets/img/leftaroww.png";
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-import Zoom from '@mui/material/Zoom';
-import { styled } from '@mui/material/styles';
+ 
 import Col from 'react-bootstrap/Col';
 import Slider from "react-slick";
 
@@ -84,7 +82,7 @@ const loadmore2 =()=>{
                 <Filter_main_tabs title="FEATURES" data={Filter_main_tabs4} />
               </div>
               <div className="btn-block">
-                <ButtonX text="Search" titlehov="Filter" id="btn001" />
+                <ButtonX text="Search" id="btn001" />
               </div>
             </div>
           </aside>
@@ -104,7 +102,7 @@ const loadmore2 =()=>{
               })}
             </Row>
             <div className="Load_more_btn_block " >
-              {currnum === first.length ?  <ButtonX text="Show Less" titlehov="Show Less" id="btn003"   eventclick={loadmore2} />    :   <ButtonX text="Load More" titlehov="Show More" id="btn002"   eventclick={loadmore1} />  }
+              {currnum === first.length ?  <ButtonX text="Show Less"   id="btn003"   eventclick={loadmore2} />    :   <ButtonX text="Load More"   id="btn002"   eventclick={loadmore1} />  }
               </div>
           </div>
         </Row>
@@ -219,57 +217,10 @@ const Subtabs = (props) => {
 }
 
 const ButtonX = (props) => {
-  const BootstrapTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} arrow classes={{ popper: className }} />
-  ))(({ theme }) => ({
-    [`& .${tooltipClasses.arrow}`]: {
-      color: theme.palette.common.black,
-    },
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.black,
-      fontSize: "12px",
-      fontWeight: 700
-    },
-  }));
-
-
-  const positionRef = React.useRef({
-    x: 0,
-    y: 0,
-  });
-  const popperRef = React.useRef(null);
-  const areaRef = React.useRef(null);
-  const handleMouseMove = (event) => {
-    positionRef.current = { x: event.clientX, y: event.clientY };
-
-    if (popperRef.current != null) {
-      popperRef.current.update();
-    }
-  };
-
   return (
     <>
-      <BootstrapTooltip
-        title={props.titlehov}
-        placement="top"
-        arrow
-        TransitionComponent={Zoom}
-        PopperProps={{
-          popperRef,
-          anchorEl: {
-            getBoundingClientRect: () => {
-              return new DOMRect(
-                positionRef.current.x,
-                areaRef.current.getBoundingClientRect().y,
-                0,
-                0,
-              );
-            },
-          },
-        }}
-      >
-        <button className="btn-skeleton"  id={props.id} ref={areaRef} onClick={props.eventclick} onMouseMove={handleMouseMove}  > <span>{props.text}</span> <img src={leftaroww} className="leftaroww" alt="leftaroww" /> </button>
-      </BootstrapTooltip>
+        <button className="btn-skeleton"  id={props.id}   onClick={props.eventclick}   > <span>{props.text}</span> <img src={leftaroww} className="leftaroww" alt="leftaroww" /> </button>
+    
     </>
   )
 }

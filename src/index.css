@@ -1477,7 +1477,7 @@
  }
 
  .hero_text_input input {
-   padding: 20px 10px 20px 68px;
+   padding: 20px 30px 20px 68px;
    font-family: 'Montserrat', sans-serif;
    font-weight: 500;
    font-size: 20px;
@@ -1492,6 +1492,9 @@
    background-repeat: no-repeat;
    background-position: 29px 50%;
  }
+ input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
 
  .hero_text_input button {
    background: #021540;
@@ -1590,6 +1593,7 @@
 
  .section_padding {
    padding: 120px 0;
+   background-color: #f5f5f5;
  }
 
  .Who_we_are_row {
@@ -1655,7 +1659,7 @@
 
  /********************  Meet_our_team Css Start *********************/
  .Meet_our_team_sec {
-   background-color: #F6F6F6;
+   background-color: #F7F7F7;
  }
 
  .Meet_our_team_sec .Heading_left_bor,

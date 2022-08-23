@@ -15,13 +15,12 @@ export const Isotop = () => {
   const [items, setitems] = useState(pagedata.slice(3, 6));
 
   //for class traversing
-  const [state, setState] = useState();
+  const [state, setState] = useState("all");
 
   const filteritem = (categories) => {
     setState(categories)
     if (categories === "all") {
       return setitems(pagedata);
-
     }
 
     const upadateditems = pagedata.filter((elm, index) => {
@@ -51,7 +50,7 @@ export const Isotop = () => {
     prevArrow: false ,
   };
   
-  console.log(state);
+ 
 
   return (
     <>

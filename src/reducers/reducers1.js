@@ -2,16 +2,15 @@ import {CardData} from "../Database/CardData";
 import {Getdata} from "../constant";
 
 //redusers
-const inhitialState = CardData ;
+const inhitialState = CardData;
 
 const  Reducer1 = (state = inhitialState, action) => {
     switch (action.type) {
       case Getdata : 
       let Matchingdata = state.Cards.filter((data)=>data.id === action.payload);
-      for(let val of Matchingdata){
+        for(let val of Matchingdata){
          Matchingdata = val ;
-         //console.log(val);
-      }
+        }
        return {
          ...state ,
          Filldata : Matchingdata ,
@@ -21,5 +20,5 @@ const  Reducer1 = (state = inhitialState, action) => {
     }
   };
 
-  export {Reducer1} ;
+export {Reducer1} ;
  

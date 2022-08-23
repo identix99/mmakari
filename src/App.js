@@ -20,7 +20,7 @@ function App() {
     setLoading(false);
     setTimeout(() => {
       setLoading(true);
-    }, 2);
+    }, 2500);
   }, []);
 
   return (
@@ -29,8 +29,8 @@ function App() {
         {isLoading ? (
           <>
           <Header />
-        <WhatappBtn />
-        <BacktoTop />
+           <WhatappBtn />
+          <BacktoTop />
         <Routes>
           <Route exact index path="/" element={<Home_page />} />
           <Route exact path="/propertyPage" element={<PropertyPage />} />

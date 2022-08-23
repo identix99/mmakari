@@ -10,7 +10,7 @@ import Mask_group_5 from '../../assets/img/Home_page/Mask_group_5.png';
 const Who_we_are_sec = () => {
     return (
         <>
-            <section className='Who_we_are_sec section_padding'>
+            <section className='Who_we_are_sec section_padding' id="triggerSection">
                 <Container>
                     <div className='Who_we_are_row'>
                         <div className='who_we_text'>

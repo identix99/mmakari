@@ -13,7 +13,7 @@ const Our_properties = () => {
     const navigate = useNavigate()
     return (
         <>
-            <section className='our_properties section_padding' id="triggerSection">
+            <section className='our_properties section_padding'>
                 <Container>
                     <div className='our_properties_heading'>
                         <div>

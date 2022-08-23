@@ -4,11 +4,9 @@ import img3 from "../../src/assets/img/pro3.png";
 import img4 from "../../src/assets/img/pro4.png";
 import img5 from "../../src/assets/img/pro5.png";
 import img6 from "../../src/assets/img/pro6.png";
- 
 //rating imgs
 import Star1 from "../assets/img/star1.png";
 import Star2 from "../assets/img/star2.png";
-
 //inner bigslider img's
 import poster1 from "../assets/img/productPage/poster1.png";
 import poster2 from "../assets/img/productPage/poster2.png";
@@ -18,7 +16,6 @@ import poster5 from "../assets/img/productPage/poster5.png";
 import poster6 from "../assets/img/productPage/poster6.png";
 import poster7 from "../assets/img/productPage/poster7.png";
 import poster8 from "../assets/img/productPage/poster8.png";
-
 //gallary photos 
 import gal1 from "../assets/img/productPage/gal1.png";
 import gal2 from "../assets/img/productPage/gal2.png";
@@ -28,9 +25,6 @@ import gal5 from "../assets/img/productPage/gal5.png";
 import gal6 from "../assets/img/productPage/gal6.png";
 import gal7 from "../assets/img/productPage/gal7.png";
 import gal8 from "../assets/img/productPage/gal8.png";
-
-
-
 // Photo Gallery
 import item1 from "../assets/img/productPage/1.png";
 import item2 from "../assets/img/productPage/2.png";
@@ -295,10 +289,6 @@ export const CardData = {
         }
       }
     },
-
-
-
-
     {
       id: "7",
       CardTopimg: [img6 , img6 , img6],
@@ -594,5 +584,5 @@ export const CardData = {
       }
     },
   ],
-  Filldata : null ,
+  Filldata : null,
 };

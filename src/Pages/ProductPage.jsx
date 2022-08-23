@@ -45,6 +45,7 @@ import ShakaPlayer from "shaka-player-react";
 import { CardData } from "../Database/CardData";
 import { Card } from "../Components/PropertyPage-Compo/PropertyPageSection1";
 import { useParams } from "react-router-dom";
+import { Loader } from "../Components/LandingPage-Compo/WhatappBtn";
 
 import {
   GoogleMap,
@@ -95,9 +96,6 @@ const IMAGES = [
   },
 ];
 
-
-
-
 const SampleNextArrow = (props) => {
   const { className, onClick } = props;
   return (
@@ -139,35 +137,30 @@ const SamplePrevArrow = (props) => {
 };
 
 
-//-----------------------------------------------------------------------------
-const ProductPage = () => {
+const  ProductPage = ()=>{
   const {pageid} = useParams();
   const  pagedata = useSelector((state) => state.layer1.Filldata);
   const dispatch = useDispatch();
 
+  const [runload , setload]= useState(false);
 
   useEffect(() => {
-    if (pagedata != null) {
-       console.log("this is null");
+
+    if ( pagedata === null) {
+      setload(false)
     }
-    dispatch(Filterdataproduct(pageid))
+      setload(true)  
+      dispatch(Filterdataproduct(pageid))
+  
    },[])
- 
-   console.log(pagedata);
- 
   
-  
- 
+  return runload ? <Innersection productdata={pagedata} /> : <p>data loading.............</p> 
+}
 
-  // const likexx = async() => {
-  //    await   console.log(pagedata.CardTopimg);
-  // };
+//-----------------------------------------------------------------------------
+const Innersection = ({productdata}) => {
+  console.log(productdata.properttheme);
 
-  // likexx()
-
-
-
- 
   const [first, setfirst] = useState(CardData.Cards);
 
   //like
@@ -233,12 +226,6 @@ const ProductPage = () => {
     ]
   };
   
-  // const fill = first.filter((item , index)=> pageid === item.id );
-  // console.log(fill);
- 
-
-  //lightbox gallary-------------------------------------------------------------------------
-
   return (
     <>
       <div className="main_wrapper productpage_wrapper" >
@@ -247,8 +234,8 @@ const ProductPage = () => {
         <div className="container ">
           <div className="topCard">
             <div className="top-1">
-              <h2 className="theme_product">lifestyle Location</h2>
-              <h2 className="price_tag">231622.93 AED</h2>
+              <h2 className="theme_product">{productdata.properttheme}</h2>
+              <h2 className="price_tag">{productdata.productpage.PropertyDetailInfo.Price}</h2>
             </div>
             <div className="top-2">
               <div className="top-2_left">
@@ -596,7 +583,7 @@ const ProductPage = () => {
 };
 
 
-
+ //lightbox gallary-------------------------------------------------------------------------
 const Gallery = () => {
   const [showLight, setShowLight] = useState(null);
 
@@ -638,13 +625,6 @@ const Gallery = () => {
 
 
 
-
-
-
-
-
-
-
 const Mymap = () => {
   const { isLoaded } = useLoadScript({
     id: "google-map-script",
@@ -677,11 +657,6 @@ const Map = () => {
     </>
   );
 };
-
-
-
-
-
 
 
 export { ProductPage };

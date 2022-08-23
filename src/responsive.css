@@ -1824,6 +1824,9 @@
         letter-spacing: 1px;
         font-size: 14px;
     }
+    .blog_paragraphs span {
+        line-height: 0.85;
+    }
 }
 
 @media (max-width: 767px) {
@@ -2463,9 +2466,15 @@
     .blog_img_sec {
         padding: 0px 0 60px 0;
     }
+    .blog_paragraphs span {
+        line-height: 0.70;
+    }
 }
 
 @media (max-width: 575px) {
+    .blog_paragraphs span {
+        line-height: 0.8;
+    }
     .dream_home_box {
         padding: 0 15px;
     }
